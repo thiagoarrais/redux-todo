@@ -1,4 +1,5 @@
 import expect from 'expect';
+import deepFreeze from 'deep-freeze';
 
 const toggleTodo = (todo) => {
   return {
@@ -18,6 +19,8 @@ const testToggleTodo = () => {
     text: 'Learn redux',
     completed: true
   };
+  
+  deepFreeze(todoBefore);
   
   expect(
     toggleTodo(todoBefore)
